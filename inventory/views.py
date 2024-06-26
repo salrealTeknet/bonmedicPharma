@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import (
     View,
-    CreateView,
+    CreateView, 
     UpdateView
 )
 from django.http import HttpResponse
@@ -65,7 +65,7 @@ class StockCreateView(SuccessMessageMixin, CreateView):                         
         context = super().get_context_data(**kwargs)
         context["title"] = 'New Stock'
         context["savebtn"] = 'Add to Inventory'
-        return context
+        return context       
 
 
 class StockUpdateView(SuccessMessageMixin, UpdateView):                                 # updateview class to edit stock, mixin used to display message
@@ -86,14 +86,14 @@ class StockUpdateView(SuccessMessageMixin, UpdateView):                         
 class StockDeleteView(View):                                                            # view class to delete stock
     template_name = "delete_stock.html"                                                 # 'delete_stock.html' used as the template
     success_message = "Stock has been deleted successfully"                             # displays message when form is submitted
-
+    
     def get(self, request, pk):
         stock = get_object_or_404(Stock, pk=pk)
         return render(request, self.template_name, {'object' : stock})
 
-    def post(self, request, pk):
+    def post(self, request, pk):  
         stock = get_object_or_404(Stock, pk=pk)
         stock.is_deleted = True
-        stock.save()
+        stock.save()                                               
         messages.success(request, self.success_message)
         return redirect('inventory')
