@@ -1,6 +1,7 @@
 from django.urls import path
 from django.conf.urls import url
 from . import views
+from .views import PurchaseBillView
 
 urlpatterns = [
     path('suppliers/', views.SupplierListView.as_view(), name='suppliers-list'),
@@ -18,6 +19,8 @@ urlpatterns = [
     path('sales/new', views.SaleCreateView.as_view(), name='new-sale'),
     path('sales/<pk>/delete', views.SaleDeleteView.as_view(), name='delete-sale'),
 
-    path("purchases/<billno>", views.PurchaseBillView.as_view(), name="purchase-bill"),
+    #path("purchases/<billno>", views.PurchaseBillView.as_view(), name="purchase-bill"),
     path("sales/<billno>", views.SaleBillView.as_view(), name="sale-bill"),
+    path('purchases/<int:billno>/', PurchaseBillView.as_view(), name='purchase-bill'),
+    # Other patterns...
 ]

@@ -24,15 +24,15 @@
                     <tbody>
                         
                         <tr style="height: 1px;">
-                            <td> <p style="text-align: center;">TAX INVOICE - PURCHASE</p> </td>
+                            <td> <p style="text-align: center;">TAX INVOICE - PURCHASE <br><br>RC : 1681150</p> </td>
                         </tr>
                         
                         <tr style="text-align: center;">
                             <td >
-                                <span style="font-size: 350%;">Company</span> <br>
-                                <span style="font-size: 120%; font-weight: bold; text-decoration: underline;">DEALERS IN : Products</span> <br>
-                                <span style="text-decoration: underline; font-weight: bold;">REGD ADDRESS :</span> Address Line 1<br>Address line 2<br>
-                                <span style="text-decoration: underline; font-weight: bold;">EMAIL : email</span> <br><br>
+                                <span style="font-size: 350%;">BONMEDICS pharmacy LTD</span> <br>
+                                <span style="font-size: 120%; font-weight: bold; text-decoration: underline;">DEALERS IN : Pharmaceutical Products</span> <br>
+                                <span style="text-decoration: underline; font-weight: bold;"> ADDRESS :</span> Shop n0.6, opposite better life gate, one way market road,Gwagwalada, Abuja<br>
+                                <span style="text-decoration: underline; font-weight: bold;">EMAIL : bonnymedical20@gmail.com</span> <br><br>
                             </td>
                         </tr>
                         
@@ -41,7 +41,7 @@
                             <table class="outer-box" style="width: 800px; margin-left: auto; margin-right: auto;">
                                 <tbody>
                                     <tr>
-                                        <td class="inner-box" style="text-align: center; font-weight: bold;" colspan="3">GSTIN NO - 123456789ABCDEF</td>
+                                        <td class="inner-box" style="text-align: center; font-weight: bold;" colspan="3">Mobile NO - 08032236736, 09165760383</td>
                                     </tr>
                                     <tr>
                                         <td class="inner-box" style="width: 50%; font-weight: bold;">&nbsp;NAME OF CONSIGNEE / BUYER</td>
@@ -93,7 +93,7 @@
                                         <tr style="height: auto;">
                                             <td class="inner-box" style="width: 5%;">&nbsp; {{ forloop.counter }}</td>
                                             <td class="inner-box" style="width: 30%;">&nbsp; {{ item.stock.name }}</td>
-                                            <td class="inner-box" style="width: 12%;">&nbsp;</td>
+                                            <td class="inner-box" style="width: 12%;">&nbsp;{{ bill.time.date }}</td>
                                             <td class="inner-box" style="width: 12%;">&nbsp; {{ item.quantity }}</td>
                                             <td class="inner-box" style="width: 12%;">&nbsp; {{ item.perprice }}</td>
                                             <td class="inner-box" style="width: 12%;">&nbsp;{{ item.totalprice }}</td>
@@ -109,7 +109,7 @@
                             <td>
                             <table class="outer-box inner-box" style="width: 800px; margin-left: auto; margin-right: auto;">
                                 <tbody>
-                                    <tr>
+                                    <!--<tr>
                                         <td class="inner-box" style="width: 35%; text-align: center;" rowspan="6">
                                             <p> <span style="font-weight: bold;">BANK DETAILS <br> company</span> <br>
                                                 bank name <br> AC NO-000 000 000 000 000 <br> IFSC CODE - ABCD 000 0000 <br> BRANCH <br> PH NO - 0123456789</p>
@@ -132,7 +132,7 @@
                                     <tr>
                                         <td class="inner-box" style="font-weight: bold;">&nbsp;TCS @ 1%</td>
                                         <td class="inner-box align-middle">&nbsp; <input type="text" name="tcs" class="align-middle" pattern="[0-9]+\.[0-9]+" style="border: 0; overflow: hidden;" value="{% if billdetails.tcs %}{{ billdetails.tcs }}{% endif %}"></td>
-                                    </tr>
+                                    </tr>-->
                                     <tr>
                                         <td class="inner-box" style="font-weight: bold;">&nbsp;TOTAL</td>
                                         <td class="inner-box align-middle">&nbsp; <input type="text" name="total" class="align-middle" pattern="[0-9]+\.[0-9]+" style="border: 0; overflow: hidden;" value="{% if billdetails.total %}{{ billdetails.total }}{% endif %}"> </td>
